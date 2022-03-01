@@ -1,89 +1,87 @@
-import React, { useState } from "react";
-import { ref, uploadBytesResumable } from "firebase/storage";
-import { storage } from "../../firebase/config";
+import { useState } from "react";
+import { useSignup } from "../../hooks/useSignup";
 
-//style
+// styles
 import "./Signup.css";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [displayName, setDisplayName] = useState("");
   const [thumbnail, setThumbnail] = useState(null);
   const [thumbnailError, setThumbnailError] = useState(null);
+  const { signup, isPending, error } = useSignup();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password, name, thumbnail);
+    signup(email, password, displayName, thumbnail);
   };
 
   const handleFileChange = (e) => {
     setThumbnail(null);
-    let file = e.target.files[0];
-    let fileRef = ref(storage, file.name);
-    const uploadTask = uploadBytesResumable(fileRef, file);
+    let selected = e.target.files[0];
+    console.log(selected);
 
-    uploadTask.on("state_changed", (snapshot) => {
-      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      console.log("Upload is " + progress + "% done");
-    });
-
-    if (!file) {
+    if (!selected) {
       setThumbnailError("Please select a file");
       return;
     }
-    if (!file.type.includes("image")) {
+    if (!selected.type.includes("image")) {
       setThumbnailError("Selected file must be an image");
       return;
     }
-    if (file.size > 100000) {
+    if (selected.size > 100000) {
       setThumbnailError("Image file size must be less than 100kb");
       return;
     }
 
     setThumbnailError(null);
-    setThumbnail(file);
+    setThumbnail(selected);
     console.log("thumbnail updated");
   };
 
   return (
-    <div>
-      <form className="auth-form" onSubmit={handleSubmit}>
-        <label>
-          <span>Email:</span>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-
-        <label>
-          <span>Name:</span>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>
-
-        <label>
-          <span>Password:</span>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-
-        <label>
-          <span>Thumbnail:</span>
-          <input type="file" onChange={handleFileChange} />
-
-          {thumbnailError && <div className="error">{thumbnailError}</div>}
-        </label>
-        <button className="btn">Signup</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} className="auth-form">
+      <h2>sign up</h2>
+      <label>
+        <span>email:</span>
+        <input
+          required
+          type="email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+        />
+      </label>
+      <label>
+        <span>password:</span>
+        <input
+          required
+          type="password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        />
+      </label>
+      <label>
+        <span>display name:</span>
+        <input
+          required
+          type="text"
+          onChange={(e) => setDisplayName(e.target.value)}
+          value={displayName}
+        />
+      </label>
+      <label>
+        <span>Profile thumbnail:</span>
+        <input required type="file" onChange={handleFileChange} />
+        {thumbnailError && <div className="error">{thumbnailError}</div>}
+      </label>
+      {!isPending && <button className="btn">Sign up</button>}
+      {isPending && (
+        <button className="btn" disabled>
+          loading
+        </button>
+      )}
+      {error && <div className="error">{error}</div>}
+    </form>
   );
 }

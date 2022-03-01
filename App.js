@@ -4,6 +4,8 @@ import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import Todo from "./pages/todo/Todo";
 import Create from "./pages/create/Create";
+import { useAuthContext } from "./hooks/useAuthContext";
+import { Navigate } from "react-router-dom";
 
 //style
 import "./App.css";
@@ -11,21 +13,35 @@ import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
 
 function App() {
+  const { user, authIsReady } = useAuthContext();
+
   return (
     <div className="App">
-      <BrowserRouter>
-        <Sidebar />
-        <div className="container">
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/create" element={<Create />} />
-            <Route path="/todos/:id" element={<Todo />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
+      {authIsReady && (
+        <BrowserRouter>
+          {user && <Sidebar />}
+          <div className="container">
+            <Navbar />
+            <Routes>
+              <Route path="/" element={user && <Home />}>
+                {!user && <Route path="*" element={<Navigate to="/login" />} />}
+              </Route>
+
+              <Route path="/create" element={user && <Create />}>
+                {!user && <Route path="*" element={<Navigate to="/login" />} />}
+              </Route>
+
+              <Route path="/todos/:id" element={user && <Todo />}>
+                {!user && <Route path="*" element={<Navigate to="/login" />} />}
+              </Route>
+
+              <Route path="/login" element={!user && <Login />}></Route>
+
+              <Route path="/signup" element={!user && <Signup />}></Route>
+            </Routes>
+          </div>
+        </BrowserRouter>
+      )}
     </div>
   );
 }
