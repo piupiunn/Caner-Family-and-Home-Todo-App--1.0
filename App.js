@@ -11,6 +11,7 @@ import { Navigate } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
+import OnlineUsers from "./components/online-users/OnlineUsers";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -40,6 +41,7 @@ function App() {
               <Route path="/signup" element={!user && <Signup />}></Route>
             </Routes>
           </div>
+          {user && <OnlineUsers />}
         </BrowserRouter>
       )}
     </div>

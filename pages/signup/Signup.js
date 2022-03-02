@@ -67,6 +67,7 @@ export default function Signup() {
           required
           type="text"
           onChange={(e) => setDisplayName(e.target.value)}
+          maxLength={6}
           value={displayName}
         />
       </label>
