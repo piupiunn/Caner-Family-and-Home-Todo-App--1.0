@@ -27,13 +27,17 @@
   border-top: 1px solid #eee;
 }
 .todo-list ul {
-  margin: 10px 0;
+  margin: 10px 0px;
   display: flex;
 }
 .todo-list li {
   margin-right: 10px;
 }
-.todo-list .avatar {
-  width: 30px;
-  height: 30px;
+.todo-list .profile-photo {
+  width: 50px;
+  height: 50px;
+  margin-left: 3px;
+}
+.name {
+  font-size: 15px;
 }
