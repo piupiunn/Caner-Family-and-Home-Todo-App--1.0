@@ -3,6 +3,7 @@
   grid-template-columns: 3fr 2fr;
   align-items: start;
   grid-gap: 60px;
+  margin-bottom: 30px;
 }
 
 /* todo summary */
@@ -26,6 +27,7 @@
   color: var(--text-color);
   font-size: 0.9em;
 }
+
 .todo-summary .assigned-users {
   display: flex;
   margin-top: 20px;
@@ -63,7 +65,7 @@
   align-items: center;
   color: var(--title-color);
 }
-.comment-author .avatar {
+.comment-author .profile-photo {
   width: 30px;
   height: 30px;
   margin-right: 10px;
@@ -71,7 +73,7 @@
 .comment-date {
   color: var(--text-color);
   font-size: 0.9em;
-  margin: 4px 0 10px;
+  margin: 4px 0 30px;
 }
 .comment-content {
   color: var(--text-color);

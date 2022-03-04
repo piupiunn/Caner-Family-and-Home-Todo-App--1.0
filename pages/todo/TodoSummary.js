@@ -20,7 +20,7 @@ export default function TodoSummary({ todo }) {
         <h2 className="page-title">{todo.title}</h2>
         <p>By {todo.createdBy.displayName}</p>
         <p className="date">Todo due by {todo.date.toDate().toDateString()}</p>
-        <p className="details">{todo.details}</p>
+        <div className="todo-details">{todo.details}</div>
         <h4>Todo assigned to:</h4>
         <div className="assigned-users">
           {todo.assignedUsersList.map((user) => (
@@ -30,11 +30,11 @@ export default function TodoSummary({ todo }) {
           ))}
         </div>
       </div>
-      {user.uid === todo.createdBy.id && (
-        <button className="btn" onClick={handleClick}>
-          Mark as Complete
-        </button>
-      )}
+      {/*   {user.uid === todo.createdBy.id && ( */}
+      <button className="btn" onClick={handleClick}>
+        Mark as Complete
+      </button>
+      {/*  )} */}
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { timestamp } from "../../firebase/config";
 import { useFirestore } from "../../hooks/useFirestore";
 import ProfilePhoto from "../../components/profile-photo/ProfilePhoto";
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 export default function TodoComments({ todo }) {
   const { updateDocument, response } = useFirestore("todos");
@@ -39,7 +40,11 @@ export default function TodoComments({ todo }) {
                 <p>{comment.displayName}</p>
               </div>
               <div className="comment-date">
-                <p>date here</p>
+                <p>
+                  {formatDistanceToNow(comment.createdAt.toDate(), {
+                    addSuffix: true,
+                  })}
+                </p>
               </div>
               <div className="comment-content">
                 <p>{comment.content}</p>
