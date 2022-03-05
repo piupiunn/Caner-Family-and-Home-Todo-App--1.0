@@ -58,6 +58,7 @@ export default function TodoComments({ todo }) {
           <span>Add new comments: </span>
           <textarea
             required
+            maxLength={500}
             onChange={(e) => setNewComment(e.target.value)}
             value={newComment}
           />

@@ -5,6 +5,8 @@ import { timestamp } from "../../firebase/config";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import instance from "../../axios";
 
 // styles
 import "./Create.css";
@@ -32,8 +34,10 @@ export default function Create() {
   const [details, setDetails] = useState("");
   const [date, setDate] = useState("");
   const [category, setCategory] = useState("");
+  const [movie, setMovie] = useState([{ title: "The Matrix Resurrections" }]);
   const [assignedUsers, setAssignedUsers] = useState([]);
   const [formError, setFormError] = useState(null);
+  const [search, setSearch] = useState("The Matrix Resurrections");
 
   // create user values for react-select
   useEffect(() => {
@@ -46,16 +50,26 @@ export default function Create() {
     }
   }, [documents]);
 
+  //request
+
+  const base_URL = "https://image.tmdb.org/t/p/w500";
+
+  const API_KEY = "d1197aff061a698a1967ae1effed211a";
+
+  const requests = {
+    fetchSearch: `/search/movie?api_key=${API_KEY}&query=${search}`,
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormError(null);
 
     if (!category) {
-      setFormError("Please select a project category.");
+      setFormError("Please select a todo category.");
       return;
     }
     if (assignedUsers.length < 1) {
-      setFormError("Please assign the project to at least 1 user");
+      setFormError("Please assign the todo to at least 1 user");
       return;
     }
 
@@ -76,6 +90,7 @@ export default function Create() {
     const todo = {
       title,
       details,
+      movie,
       category: category.value,
       date: timestamp.fromDate(new Date(date)),
       comments: [],
@@ -88,6 +103,20 @@ export default function Create() {
       navigate("/");
     }
   };
+
+  useEffect(() => {
+    async function fetchData() {
+      const request = await axios.get(
+        "https://api.themoviedb.org/3" + requests.fetchSearch
+      );
+      setMovie(request.data.results);
+      return request;
+    }
+    fetchData();
+  }, [requests.fetchSearch]);
+  console.log(movie);
+
+  //d1197aff061a698a1967ae1effed211a
 
   return (
     <div className="create-form">
@@ -123,12 +152,34 @@ export default function Create() {
         </label>
 
         <label>
-          <span>Project category:</span>
-          <Select
-            onChange={(option) => setCategory(option)}
-            options={categories}
+          <span>Search Film:</span>
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
         </label>
+
+        <div>
+          {movie[0] ? (
+            <>
+              <h4>{movie[0].title}</h4>
+              <img
+                src={`${base_URL}${movie[0].poster_path}`}
+                alt={movie[0].title}
+              />
+            </>
+          ) : (
+            <>
+              <h4>Sorry, movie not found</h4>
+            </>
+          )}
+        </div>
+        <span>Project category:</span>
+        <Select
+          onChange={(option) => setCategory(option)}
+          options={categories}
+        />
 
         <label>
           <span>Assign to:</span>

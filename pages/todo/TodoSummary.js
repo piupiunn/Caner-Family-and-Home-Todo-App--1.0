@@ -20,7 +20,14 @@ export default function TodoSummary({ todo }) {
         <h2 className="page-title">{todo.title}</h2>
         <p>By {todo.createdBy.displayName}</p>
         <p className="date">Todo due by {todo.date.toDate().toDateString()}</p>
-        <div className="todo-details">{todo.details}</div>
+        <div className="details">{todo.details}</div>
+
+        <div>{todo.movie[0].original_title}</div>
+        <img
+          className="poster"
+          src={`https://image.tmdb.org/t/p/w500${todo.movie[0].poster_path}`}
+          alt={todo.movie[0].title}
+        />
         <h4>Todo assigned to:</h4>
         <div className="assigned-users">
           {todo.assignedUsersList.map((user) => (

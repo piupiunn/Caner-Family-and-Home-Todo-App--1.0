@@ -6,6 +6,18 @@ import ProfilePhoto from "../profile-photo/ProfilePhoto";
 import "./TodoList.css";
 
 export default function TodoList({ todos }) {
+  const changeColorRed = (e) => {
+    e.target.parentElement.style.setProperty("background-color", "red");
+  };
+
+  const changeColorBlue = (e) => {
+    e.target.parentElement.style.setProperty("background-color", "blue");
+  };
+
+  const changeColorGreen = (e) => {
+    e.target.parentElement.style.setProperty("background-color", "green");
+  };
+
   console.log(todos);
   return (
     <div className="todo-list">
@@ -13,6 +25,7 @@ export default function TodoList({ todos }) {
       {todos.map((todo) => (
         <Link to={`/todos/${todo.id}`} key={todo.id}>
           <h4>{todo.title}</h4>
+
           <p>Due by {todo.date.toDate().toDateString()}</p>
           <div className="assigned-to">
             <p>
