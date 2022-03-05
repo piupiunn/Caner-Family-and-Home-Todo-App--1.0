@@ -6,12 +6,12 @@ import Todo from "./pages/todo/Todo";
 import Create from "./pages/create/Create";
 import { useAuthContext } from "./hooks/useAuthContext";
 import { Navigate } from "react-router-dom";
-
-//style
-import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
 import OnlineUsers from "./components/online-users/OnlineUsers";
+
+//style
+import "./App.css";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -23,6 +23,7 @@ function App() {
           {user && <Sidebar />}
           <div className="container">
             <Navbar />
+
             <Routes>
               <Route path="/" element={user && <Home />}>
                 {!user && <Route path="*" element={<Navigate to="/login" />} />}

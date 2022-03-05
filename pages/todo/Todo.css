@@ -12,9 +12,12 @@
   padding: 30px;
   border-radius: 4px;
 }
+.todo-summary .page-title {
+  margin-top: 10px;
+}
 .todo-summary .date {
-  margin: 10px 0;
-  font-size: 0.9em;
+  justify-content: flex-end;
+  font-size: 10px;
   color: var(--title-color);
 }
 .todo-summary .details {
@@ -26,12 +29,14 @@
 }
 .todo-summary h4 {
   color: var(--text-color);
-  font-size: 0.9em;
+  font-size: 10px;
+  margin-top: 10px;
 }
 
-.todo-summary .assigned-users {
+.todo-summary p {
   display: flex;
-  margin-top: 20px;
+  margin-top: 5px;
+  font-size: 12px;
 }
 .todo-summary .assigned-users .profilephoto {
   margin-right: 10px;
@@ -42,6 +47,9 @@
 .todo-summary .poster {
   justify-content: end;
   margin-top: 5px;
+}
+.profilephoto {
+  display: grid;
 }
 
 /* todo comments */

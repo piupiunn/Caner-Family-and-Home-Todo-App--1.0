@@ -37,6 +37,8 @@ export default function Home() {
           case "rent":
           case "bank":
           case "mortgage":
+          case "family":
+          case "car":
             console.log(document.categpru, currentFilter);
             return document.category === currentFilter;
           default:

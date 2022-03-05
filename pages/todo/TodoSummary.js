@@ -17,21 +17,28 @@ export default function TodoSummary({ todo }) {
   return (
     <div>
       <div className="todo-summary">
+        <p className="date">Todo due by {todo.date.toDate().toDateString()}</p>
         <h2 className="page-title">{todo.title}</h2>
         <p>By {todo.createdBy.displayName}</p>
-        <p className="date">Todo due by {todo.date.toDate().toDateString()}</p>
+
         <div className="details">{todo.details}</div>
 
-        <div>{todo.movie[0].original_title}</div>
-        <img
-          className="poster"
-          src={`https://image.tmdb.org/t/p/w500${todo.movie[0].poster_path}`}
-          alt={todo.movie[0].title}
-        />
+        {todo.movie[0] ? (
+          <>
+            <div>{todo.movie[0].original_title}</div>
+            <img
+              className="poster"
+              src={`https://image.tmdb.org/t/p/w500${todo.movie[0].poster_path}`}
+              alt={todo.movie[0].title}
+            />
+          </>
+        ) : (
+          <h4></h4>
+        )}
         <h4>Todo assigned to:</h4>
         <div className="assigned-users">
           {todo.assignedUsersList.map((user) => (
-            <div key={user.id}>
+            <div className="profile-photo" key={user.id}>
               <ProfilePhoto src={user.photoURL} />
             </div>
           ))}

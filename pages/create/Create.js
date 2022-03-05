@@ -6,7 +6,6 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import instance from "../../axios";
 
 // styles
 import "./Create.css";
@@ -20,6 +19,8 @@ const categories = [
   { value: "rent", label: "Rent" },
   { value: "bank", label: "Bank" },
   { value: "mortgage", label: "Mortgage" },
+  { value: "family", label: "Family" },
+  { value: "car", label: "Car" },
 ];
 
 export default function Create() {
@@ -34,10 +35,10 @@ export default function Create() {
   const [details, setDetails] = useState("");
   const [date, setDate] = useState("");
   const [category, setCategory] = useState("");
-  const [movie, setMovie] = useState([{ title: "The Matrix Resurrections" }]);
+  const [movie, setMovie] = useState([]);
   const [assignedUsers, setAssignedUsers] = useState([]);
   const [formError, setFormError] = useState(null);
-  const [search, setSearch] = useState("The Matrix Resurrections");
+  const [search, setSearch] = useState("");
 
   // create user values for react-select
   useEffect(() => {
@@ -49,16 +50,6 @@ export default function Create() {
       );
     }
   }, [documents]);
-
-  //request
-
-  const base_URL = "https://image.tmdb.org/t/p/w500";
-
-  const API_KEY = "d1197aff061a698a1967ae1effed211a";
-
-  const requests = {
-    fetchSearch: `/search/movie?api_key=${API_KEY}&query=${search}`,
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -104,19 +95,24 @@ export default function Create() {
     }
   };
 
+  //request
+
+  const base_URL = "https://api.themoviedb.org/3";
+  const photo_base_URL = "https://image.tmdb.org/t/p/w500";
+  const API_KEY = "d1197aff061a698a1967ae1effed211a";
+  const requests = {
+    fetchSearch: `/search/movie?api_key=${API_KEY}&query=${search}`,
+  };
+
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(
-        "https://api.themoviedb.org/3" + requests.fetchSearch
-      );
+      const request = await axios.get(base_URL + requests.fetchSearch);
       setMovie(request.data.results);
       return request;
     }
     fetchData();
   }, [requests.fetchSearch]);
   console.log(movie);
-
-  //d1197aff061a698a1967ae1effed211a
 
   return (
     <div className="create-form">
@@ -165,13 +161,14 @@ export default function Create() {
             <>
               <h4>{movie[0].title}</h4>
               <img
-                src={`${base_URL}${movie[0].poster_path}`}
+                className="poster"
+                src={`${photo_base_URL}${movie[0].poster_path}`}
                 alt={movie[0].title}
               />
             </>
           ) : (
             <>
-              <h4>Sorry, movie not found</h4>
+              <h4></h4>
             </>
           )}
         </div>

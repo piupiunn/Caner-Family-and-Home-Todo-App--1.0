@@ -11,6 +11,8 @@ const filterList = [
   "rent",
   "bank",
   "mortgage",
+  "family",
+  "car",
 ];
 
 export default function TodoFilter({ currentFilter, changeFilter }) {
