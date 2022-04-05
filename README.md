@@ -8,4 +8,17 @@ React.js
 Firebase
 
 
- I tried to make a compact application with many features together. These features; registration, member login, adding photos, getting information from API, seeing users' online status, adding and deleting tasks, assigning a task to a specific user, only the task creator can delete the task, viewing by category, not showing the site content to non-members, real-time public chat. And finally registering all features on firebase.
+Site features;
+
+Registration,
+Member login,
+Adding photos,
+Getting information from API,
+Seeing users' online status,
+Adding and deleting tasks,
+Assigning a task to a specific user,
+Only the task creator can delete the task,
+Viewing by category,
+Not showing the site content to non-members,
+Real-time public chat.
+Registering all features on firebase.
