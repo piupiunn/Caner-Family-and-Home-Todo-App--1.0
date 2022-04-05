@@ -2,37 +2,18 @@
 Site link; https://caner-family-home-todo.firebaseapp.com/
 
 
+![Family-Home Todo Website SS](https://user-images.githubusercontent.com/96390657/161709537-dc5bc5e3-8f69-4cbe-904e-8ddff3f5b3b7.jpg)
+
+
 Built With
 
 
-React.js
-
-Firebase
++React.js,
++Firebase
 
 
 Site features;
 
-Registration.
++Registration, +Member login, +Adding photos, +Getting information from API, +Seeing users' online status,+Adding and deleting tasks, +Assigning a task to a specific user, +Only the task creator can delete the task, +Viewing by category, +Not showing the site content to non-members. +Real-time public chat, +Registering all features on firebase.
 
-Member login.
-
-Adding photos.
-
-Getting information from API.
-
-Seeing users' online status.
-
-Adding and deleting tasks.
-
-Assigning a task to a specific user.
-
-Only the task creator can delete the task.
-
-Viewing by category.
-
-Not showing the site content to non-members.
-
-Real-time public chat.
-
-Registering all features on firebase.
 
