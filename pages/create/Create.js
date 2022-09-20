@@ -95,7 +95,7 @@ export default function Create() {
     }
   };
 
-  //request
+  //requests
 
   const base_URL = "https://api.themoviedb.org/3";
   const photo_base_URL = "https://image.tmdb.org/t/p/w500";

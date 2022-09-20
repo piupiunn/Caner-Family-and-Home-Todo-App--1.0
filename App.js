@@ -23,7 +23,7 @@ function App() {
           {user && <Sidebar />}
           <div className="container">
             <Navbar />
-
+            <div></div>
             <Routes>
               <Route path="/" element={user && <Home />}>
                 {!user && <Route path="*" element={<Navigate to="/login" />} />}

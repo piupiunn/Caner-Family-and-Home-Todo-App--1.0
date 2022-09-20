@@ -15,33 +15,46 @@ export default function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="auth-form">
-      <h2>login</h2>
-      <label>
-        <span>email:</span>
-        <input
-          required
-          type="email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-      </label>
-      <label>
-        <span>password:</span>
-        <input
-          required
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
-      </label>
-      {!isPending && <button className="btn">Log in</button>}
-      {isPending && (
-        <button className="btn" disabled>
-          loading
-        </button>
-      )}
-      {error && <div className="error">{error}</div>}
-    </form>
+    <>
+      <div>
+        <p>
+          Please don't take it as rude, I'm saying it because someone has done
+          it before. Please do not add unethical content.
+        </p>
+        <br></br>
+        <p>
+          Lütfen kabalık olarak algılamayın, sadece daha önce birisi yaptığı
+          için söylüyorum. Lütfen iş etiğine aykırı bir içerik eklemeyin.
+        </p>
+      </div>
+      <form onSubmit={handleSubmit} className="auth-form">
+        <h2>login</h2>
+        <label>
+          <span>email:</span>
+          <input
+            required
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          />
+        </label>
+        <label>
+          <span>password:</span>
+          <input
+            required
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+        </label>
+        {!isPending && <button className="btn">Log in</button>}
+        {isPending && (
+          <button className="btn" disabled>
+            loading
+          </button>
+        )}
+        {error && <div className="error">{error}</div>}
+      </form>
+    </>
   );
 }

@@ -39,7 +39,7 @@ export default function Home() {
           case "mortgage":
           case "family":
           case "car":
-            console.log(document.categpru, currentFilter);
+            console.log(document.category, currentFilter);
             return document.category === currentFilter;
           default:
             return true;
