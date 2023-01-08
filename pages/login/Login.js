@@ -18,20 +18,16 @@ export default function Login() {
     <>
       <div>
         <p>
-          Please don't take it as rude, I'm saying it because someone has done
-          it before. Please do not add unethical content.
+          If you dont want to signup, you can use deneme@deneme.com 123456789{" "}
         </p>
         <br></br>
-        <p>
-          Lütfen kabalık olarak algılamayın, sadece daha önce birisi yaptığı
-          için söylüyorum. Lütfen iş etiğine aykırı bir içerik eklemeyin.
-        </p>
       </div>
       <form onSubmit={handleSubmit} className="auth-form">
         <h2>login</h2>
         <label>
           <span>email:</span>
           <input
+            placeholder="deneme@deneme.com"
             required
             type="email"
             onChange={(e) => setEmail(e.target.value)}
@@ -41,6 +37,7 @@ export default function Login() {
         <label>
           <span>password:</span>
           <input
+            placeholder="123456789"
             required
             type="password"
             onChange={(e) => setPassword(e.target.value)}

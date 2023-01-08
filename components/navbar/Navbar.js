@@ -32,7 +32,7 @@ export default function Navbar() {
         )}
 
         <li>
-          {!isPending && (
+          {!isPending && user && (
             <button className="btn" onClick={logout}>
               Logout
             </button>
