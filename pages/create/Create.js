@@ -144,6 +144,7 @@ export default function Create() {
           <span>Set due date:</span>
           <input
             required
+            max="2025-01-01"
             min={today}
             type="date"
             onChange={(e) => setDate(e.target.value)}
