@@ -82,7 +82,7 @@ export default function Signup() {
           <button className="btn" disabled>
             loading
           </button>
-        )}
+        )}{" "}
         {error && <div className="error">{error}</div>}
       </form>
     </>

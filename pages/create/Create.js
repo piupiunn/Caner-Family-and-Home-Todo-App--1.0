@@ -114,6 +114,9 @@ export default function Create() {
   }, [requests.fetchSearch]);
   console.log(movie);
 
+  // for prevent choose before dates
+  const today = new Date().toISOString().split("T")[0];
+
   return (
     <div className="create-form">
       <h2 className="page-title">Create a new Project</h2>
@@ -141,6 +144,7 @@ export default function Create() {
           <span>Set due date:</span>
           <input
             required
+            min={today}
             type="date"
             onChange={(e) => setDate(e.target.value)}
             value={date}
