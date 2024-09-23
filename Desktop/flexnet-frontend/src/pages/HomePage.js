@@ -6,6 +6,7 @@ import UseCases from "../components/UseCases";
 import Partners from "../components/Partners";
 import Faq from "../components/Faq";
 import HomeBlog from "../components/HomeBlog";
+import Contact from "../components/Contact";
 
 export default function HomePage() {
   return (
@@ -21,6 +22,8 @@ export default function HomePage() {
       <HomeBlog />
       <h1 className="section-titles">FAQ</h1>
       <Faq />
+      <h1 className="section-titles">Contact Us</h1>
+      <Contact />
     </div>
   );
 }
