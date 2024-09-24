@@ -248,12 +248,12 @@ a {
 }
 /**/
 .home-blog {
-  flex-wrap: wrap;
   display: flex;
+  flex-wrap: wrap;
 }
 .blog-box-parent {
-  padding: 1rem !important;
   width: 33.3333%;
+  padding: 1rem !important;
 }
 .blog-box-container {
   border-radius: 6px;
@@ -501,6 +501,327 @@ li {
     margin-right: auto !important;
   }
 }
+/**/
+.blog-page-parent {
+  padding-left: 5rem !important;
+  padding-right: 5rem !important;
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+.blog-page-date-author {
+  color: #757575;
+  font-size: 0.875rem !important;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+.blog-page-date {
+  color: #757575;
+  font-weight: 700;
+}
+.blog-page-author {
+  color: #757575;
+  font-weight: 700;
+}
+.blog-page-title {
+  border-left: 8px solid;
+  margin-bottom: 1rem !important;
+  padding: 1rem !important;
+  font-size: 1.5rem !important;
+  font-weight: 500 !important;
+  border-color: #326fd1;
+  color: #212121;
+  text-align: left;
+}
+.blog-page-info {
+  margin-bottom: 2rem !important;
+  font-size: 1.25rem !important;
+  color: #616161;
+  text-align: left;
+}
+.blog-page-categories {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.category-badge {
+  margin-right: 0.5rem;
+}
+.blog-page-parent p {
+  margin-bottom: 1.5rem !important;
+  line-height: 1.5 !important;
+  color: #616161 !important;
+  text-align: left;
+}
+.blog-page-parent blockquote {
+  margin-bottom: 1.5rem !important;
+  line-height: 1.5 !important;
+  color: #616161 !important;
+  font-size: 1.25rem;
+}
+.blog-page-img {
+  margin-bottom: 1.5rem !important;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.blog-page-img img {
+  border-radius: 6px;
+  width: 80% !important;
+  margin: auto;
+}
+.blog-page-parent h2 {
+  text-align: left;
+  margin-bottom: 1.5rem !important;
+  color: #212121;
+  font-size: 1.5rem;
+}
+/**/
+.contact-page-title {
+  margin-top: 3rem;
+}
+.embed-map {
+  width: 90%;
+  margin: auto;
+  width: 100%;
+}
+.embed-map iframe {
+  width: 70%;
+  margin: auto;
+  width: 100%;
+}
+.contact-us-page .contact-right a {
+  display: none;
+}
+/**/
+.faq-page-title {
+  margin-top: 3rem;
+}
+.faq-page-bottom {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: inline-block;
+}
+
+.faq-page-bottom h2 {
+  margin-bottom: 1.5rem !important;
+  line-height: 1.5 !important;
+  color: #616161 !important;
+}
+.faq-page-bottom button {
+  margin: auto;
+  margin-bottom: 3rem;
+}
+/**/
+/* App.css */
+
+.title {
+  text-align: center;
+  font-size: 2.2em;
+  color: #0d47a1;
+  margin-bottom: 30px;
+}
+
+.flexnet-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.flexnet-table th,
+.flexnet-table td {
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  text-align: left;
+}
+
+.flexnet-table th {
+  background-color: #e0f7fa;
+  font-size: 1.1em;
+  color: #00796b;
+}
+
+.flexnet-table td {
+  background-color: #ffffff;
+}
+
+.result-title {
+  font-size: 1.5em;
+  margin: 20px 0 10px;
+  color: #0d47a1;
+}
+
+.package-list {
+  list-style-type: disc;
+  margin: 10px 0;
+  padding-left: 20px;
+  color: #444;
+  display: inline-block;
+}
+.package-list li {
+  font-weight: 700;
+}
+
+.cta {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.price {
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #e65100;
+}
+.p-button {
+  margin-right: 10px;
+  padding: 5px;
+}
+.connectivity-page-button {
+  margin: auto;
+  margin-top: 2rem;
+}
+.vertical-solutions-page-title {
+  margin-top: 3rem;
+}
+/**/
+.all-blog-page-title {
+  margin-top: 3rem;
+}
+.blog-bar {
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  width: 100%;
+}
+.blog-bar svg {
+  fill: rgb(181, 41, 41);
+}
+.blog-bar h1 {
+  line-height: 1.5 !important;
+  display: block;
+  font-weight: 500 !important;
+  color: #212121;
+  font-size: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .blog-bar-container {
+    max-width: 994px;
+  }
+}
+@media (min-width: 1280px) {
+  .blog-bar-container {
+    max-width: 1241px;
+  }
+}
+@media (min-width: 1536px) {
+  .blog-bar-container {
+    max-width: 1500px;
+  }
+}
+/**/
+.use-case-page-title {
+  background-color: #f5b99f;
+  padding: 5rem;
+  text-transform: uppercase;
+  text-align: left;
+}
+.use-case-page-title h3 {
+  color: #f8a830;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.use-case-page-title h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+}
+.use-case-page-content {
+  display: flex;
+}
+.use-case-page-content-left {
+  width: 25%;
+  background-color: #ffd767;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: #333333;
+}
+.use-case-page-content-right {
+  width: 75%;
+  background-color: #e1e8eb;
+  padding: 50px;
+  text-align: left;
+}
+.use-case-company-logo h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 23px;
+}
+.use-case-page-content-left-info h4 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 17px;
+  margin-top: 35px;
+}
+.project-right-top {
+  margin-bottom: 40px;
+  font-size: 17px;
+}
+.project-overview h1 {
+  color: #f95b17;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.project-overview p {
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+.project-results h1 {
+  color: #f95b17;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.project-results-text h1 {
+  color: #333333 !important;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.project-circle-result-parent {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.project-circle-result {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #f95b17;
+  text-align: center;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 30px;
+}
+.project-circle-result-parent-container {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+/**/
+/**/
+/**/
 /**/
 /**/
 /**/

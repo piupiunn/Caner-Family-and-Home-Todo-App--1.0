@@ -1,5 +1,10 @@
 import React from "react";
+import UseCasePageBox from "../components/useCasePageBox";
 
 export default function UseCasesPage() {
-  return <div>use-cases-page</div>;
+  return (
+    <div>
+      <UseCasePageBox />
+    </div>
+  );
 }
