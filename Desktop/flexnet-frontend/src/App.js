@@ -8,6 +8,7 @@ import UseCasesPage from "./pages/UseCasesPage";
 import VerticalSolutionsPage from "./pages/VerticalSolutionsPage";
 import FaqPage from "./pages/FaqPage";
 import PartnersPage from "./pages/PartnersPage";
+import AllBlogs from "./components/AllBlogs";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <Route path="vertical-solutions" element={<VerticalSolutionsPage />} />
         <Route path="connectivity" element={<ConnectivityPage />} />
         <Route path="use-cases" element={<UseCasesPage />} />
-        <Route path="blog" element={<BlogPage />} />
+        <Route path="blog-page" element={<AllBlogs />} />
+        <Route path="blog-single" element={<BlogPage />} />
         <Route path="faq" element={<FaqPage />} />
         <Route path="contact-us" element={<ContactUsPage />} />
         <Route path="Partners" element={<PartnersPage />} />

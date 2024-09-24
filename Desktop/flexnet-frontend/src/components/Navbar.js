@@ -5,7 +5,7 @@ export default function Navbar() {
     <div className="wrapper">
       <div className="navbar-container">
         <div className="logo-container">
-          <img id="logo-img" src="" alt="*" />
+          <img id="logo-img" src="" alt="logo" />
         </div>
         <div className="navbar-list">
           <ul>
@@ -25,7 +25,7 @@ export default function Navbar() {
               <Link to="/partners">Partners</Link>
             </li>
             <li>
-              <Link to="/blog">Blog</Link>
+              <Link to="/blog-page">Blog</Link>
             </li>
             <li>
               <Link to="/faq">FAQ</Link>
