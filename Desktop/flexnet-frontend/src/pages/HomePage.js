@@ -7,13 +7,14 @@ import Partners from "../components/Partners";
 import Faq from "../components/Faq";
 import HomeBlog from "../components/HomeBlog";
 import Contact from "../components/Contact";
+import VerticalSolutionsCarousel from "../components/VerticalSolutionsCarousel";
 
 export default function HomePage() {
   return (
     <div>
       <MainPageHero />
       <h1 className="section-titles">Vertical Solutions</h1>
-      <VerticalSolutions />
+      <VerticalSolutionsCarousel />
       <Connectivity />
       <UseCases />
       <h1 className="section-titles">Our Partners</h1>

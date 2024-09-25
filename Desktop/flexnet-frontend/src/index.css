@@ -11,6 +11,7 @@ a {
   text-decoration: none;
   color: black;
 }
+
 .section-titles {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -19,8 +20,69 @@ a {
   margin-bottom: 2.5rem;
   font-weight: 600;
 }
+.vertical-soli-box {
+  width: 31%;
+}
 
+.vertical-soli-box-icon {
+  width: 50px;
+}
 /*NAVBAR*/
+
+.megamenu {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: white;
+  color: black;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 600px;
+}
+.megamenu-lists {
+  display: flex;
+}
+.megamenu-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.megamenu-content .list {
+  margin: 0 10px;
+}
+
+.megamenu-content h4 {
+  margin-bottom: 10px;
+}
+
+.megamenu-content ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap !important;
+}
+
+.megamenu-content li {
+  color: #333;
+  text-decoration: none;
+  flex: 1;
+}
+
+.megamenu-content ul li a {
+  color: #333;
+  text-decoration: none;
+  width: 200px;
+}
+
+.megamenu-content ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Keep your previous navbar container styling */
 .navbar-container {
   margin-left: 5rem;
   margin-right: 5rem;
@@ -30,17 +92,18 @@ a {
   padding-bottom: 1.5rem;
   align-items: center;
   background-color: white;
-
   display: flex;
 }
+
 .logo-container {
   display: inline-block;
 }
+
 .navbar-list {
   display: flex;
-
   width: 100%;
 }
+
 .navbar-list ul {
   display: flex;
   list-style: none;
@@ -48,9 +111,12 @@ a {
   align-items: center;
   justify-content: space-between;
 }
+
 .navbar-list ul li {
   cursor: pointer;
+  position: relative;
 }
+
 .contact-button {
   border-style: none;
   padding-left: 1rem !important;
@@ -61,13 +127,16 @@ a {
   transition: background-color 0.2s, color 0.2s, border-color 0.2s,
     box-shadow 0.2s;
 }
+
 .contact-button-hero {
   padding: 0.75rem !important;
 }
+
 .contact-button a {
   color: #fff !important;
   font-size: 1.25rem !important;
 }
+
 /**/
 /*FOOTER*/
 /*MAIN-PAGE-HERO*/
@@ -712,15 +781,24 @@ li {
   .blog-bar-container {
     max-width: 994px;
   }
+  .vertical-soli-box {
+    width: 47%;
+  }
 }
 @media (min-width: 1280px) {
   .blog-bar-container {
     max-width: 1241px;
   }
+  .vertical-soli-box {
+    width: 47%;
+  }
 }
 @media (min-width: 1536px) {
   .blog-bar-container {
     max-width: 1500px;
+  }
+  .vertical-soli-box {
+    width: 30%;
   }
 }
 /**/
@@ -819,8 +897,128 @@ li {
   justify-content: center;
   text-align: center;
 }
+.solution-button {
+  background-color: #3b82f6;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex !important;
+  border-radius: 8px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+
+  align-items: center;
+}
+.solution-button a {
+  color: white;
+}
+.vertical-box-p {
+  margin-bottom: 20px;
+}
+.vertical-box-button {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: max-content;
+}
+.vertical-box-button a {
+  color: #555555;
+}
+.vertical-accordion-button {
+  margin-left: 10px;
+}
 /**/
+.new-verticalbox-parent {
+  position: relative;
+  width: 100%;
+  max-width: 455px;
+  margin-bottom: 150px;
+}
+
+.new-verticalbox-parent img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90%;
+  background: linear-gradient(to top, #ffedd5, transparent);
+}
+
+.new-verticalbox-parent h1 {
+  position: absolute;
+  color: white;
+  top: 20px;
+  left: 0;
+  left: 0;
+  right: 0;
+  font-size: 30px;
+  z-index: 10;
+}
+.new-verticalbox-parent button {
+  position: absolute;
+  color: white;
+  bottom: 0px;
+  left: 0;
+  left: 0;
+  right: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 17px;
+  background-color: red;
+}
+.partners-button {
+  background-color: #3b82f6;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex !important;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+
+  align-items: center;
+}
+.partners-button a {
+  color: white;
+}
+.vertical-slayt .vertical-soli-box {
+  width: 97% !important;
+  height: 325px;
+}
+.mega-menu-general-link {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 15px;
+  display: flex;
+  text-decoration: underline;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-top: 50px;
+  align-items: center;
+  text-align: center;
+}
 /**/
+.contact-page-parent {
+}
 /**/
 /**/
 /**/

@@ -17,8 +17,9 @@ import { TbParkingCircle } from "react-icons/tb";
 import { FaArrowUpFromWaterPump, FaOilWell } from "react-icons/fa6";
 import NewVerticalBox from "./NewVerticalBox";
 import { Link } from "react-router-dom";
+import { Carousel } from "primereact/carousel";
 
-export default function VerticalSolutions() {
+export default function VerticalSolutionsCarousel() {
   const features = [
     {
       icon: <CiWifiOn size={40} className="text-yellow-600" />,
@@ -43,7 +44,7 @@ export default function VerticalSolutions() {
     },
     {
       icon: <BsCameraReelsFill size={24} className="text-gray-500" />,
-      title: "Flexnet Media & Brodcast",
+      title: "Flexnet Media & Broadcast",
       description: "Live event streaming and content delivery",
       bgColor: "bg-gray-100",
       borderColor: "border-gray-200",
@@ -121,7 +122,7 @@ export default function VerticalSolutions() {
     {
       icon: <MdOutlineElevator size={30} className="text-cyan-500" />,
       title: "Flexnet Elevator",
-      description: "Predicitive maintenance and in-cabin entertainment",
+      description: "Predictive maintenance and in-cabin entertainment",
       bgColor: "bg-cyan-100",
       borderColor: "border-cyan-200",
     },
@@ -134,20 +135,44 @@ export default function VerticalSolutions() {
     },
   ];
 
+  const responsiveOptions = [
+    {
+      breakpoint: "1024px",
+      numVisible: 2,
+      numScroll: 1,
+    },
+    {
+      breakpoint: "600px",
+      numVisible: 1,
+      numScroll: 1,
+    },
+  ];
+
+  const solutionTemplate = (feature) => {
+    return (
+      <SolutionBox
+        icon={feature.icon}
+        title={feature.title}
+        description={feature.description}
+        bgColor={feature.bgColor}
+        borderColor={feature.borderColor}
+      />
+    );
+  };
+
   return (
-    <div>
-      <div className="container mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {features.map((feature, index) => (
-          <SolutionBox
-            key={index}
-            icon={feature.icon}
-            title={feature.title}
-            description={feature.description}
-            bgColor={feature.bgColor}
-            borderColor={feature.borderColor}
-          />
-        ))}
-      </div>
+    <div className="container vertical-slayt mx-auto px-6 py-10">
+      <Carousel
+        value={features}
+        itemTemplate={solutionTemplate}
+        numVisible={3}
+        numScroll={1}
+        responsiveOptions={responsiveOptions}
+        circular
+        autoplayInterval={3000}
+        className="vertical-solutions-carousel"
+      />
+
       <button className="solution-button shadow-lg">
         <Link to="/vertical-solutions">See Solutions Details</Link>
       </button>
