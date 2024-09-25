@@ -7,7 +7,7 @@ export default function AllBlogs() {
     <div>
       <h1 className="all-blog-page-title section-titles">Our Blog</h1>
 
-      <div className="blog-bar blog-bar-container  mx-auto  px-6  py-2  ">
+      <div className="blog-bar blog-bar-container  mx-auto  px-3  py-2  ">
         <MdOutlineTrendingUp /> <h1>What's Trending</h1>
       </div>
 
@@ -41,7 +41,7 @@ export default function AllBlogs() {
         />
       </div>
 
-      <div className="blog-bar blog-bar-container  mx-auto  px-6  py-2  ">
+      <div className="blog-bar blog-bar-container  mx-auto  px-3  py-2  ">
         <MdOutlineTrendingUp /> <h1>Latest</h1>
       </div>
 
