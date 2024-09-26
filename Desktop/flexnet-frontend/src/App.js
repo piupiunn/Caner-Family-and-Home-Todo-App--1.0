@@ -9,6 +9,7 @@ import VerticalSolutionsPage from "./pages/VerticalSolutionsPage";
 import FaqPage from "./pages/FaqPage";
 import PartnersPage from "./pages/PartnersPage";
 import AllBlogs from "./components/AllBlogs";
+import SingeVerticalPage from "./components/SingeVerticalPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="faq" element={<FaqPage />} />
         <Route path="contact-us" element={<ContactUsPage />} />
         <Route path="Partners" element={<PartnersPage />} />
+        <Route path="single-vertical" element={<SingeVerticalPage />} />
       </Routes>
     </div>
   );
