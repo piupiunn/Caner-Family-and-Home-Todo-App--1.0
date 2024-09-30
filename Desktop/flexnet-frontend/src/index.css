@@ -11,7 +11,10 @@ a {
   text-decoration: none;
   color: black;
 }
-
+.fp-warning,
+.fp-watermark {
+  display: none !important;
+}
 .section-titles {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -26,6 +29,40 @@ a {
 
 .vertical-soli-box-icon {
   width: 50px;
+}
+
+@media (min-width: 1024px) {
+  .blog-bar-container {
+    max-width: 994px;
+  }
+  .vertical-soli-box {
+    width: 47%;
+  }
+  .usecases-home-box {
+    width: 47% !important;
+  }
+}
+@media (min-width: 1280px) {
+  .blog-bar-container {
+    max-width: 1241px;
+  }
+  .vertical-soli-box {
+    width: 47%;
+  }
+  .usecases-home-box {
+    width: 47% !important;
+  }
+}
+@media (min-width: 1536px) {
+  .blog-bar-container {
+    max-width: 1500px;
+  }
+  .vertical-soli-box {
+    width: 32%;
+  }
+  .usecases-home-box {
+    width: 48% !important;
+  }
 }
 /*NAVBAR*/
 
@@ -156,7 +193,7 @@ a {
 .main-page-hero-top {
   margin-left: 5rem !important;
   margin-right: 5rem !important;
-  margin-top: 1.5rem !important;
+  margin-top: 7.5rem !important;
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -168,10 +205,12 @@ a {
   display: flex !important;
 }
 .hero-firstTitle {
-  font-weight: 300 !important;
+  font-weight: 600 !important;
+  font-size: 25px;
 }
 .hero-subTitle {
-  margin-top: -35px;
+  margin-top: -30px;
+  font-size: 20px;
 }
 .main-page-hero-top p {
   line-height: 1.5 !important;
@@ -777,30 +816,6 @@ li {
   font-size: 1.25rem;
 }
 
-@media (min-width: 1024px) {
-  .blog-bar-container {
-    max-width: 994px;
-  }
-  .vertical-soli-box {
-    width: 47%;
-  }
-}
-@media (min-width: 1280px) {
-  .blog-bar-container {
-    max-width: 1241px;
-  }
-  .vertical-soli-box {
-    width: 47%;
-  }
-}
-@media (min-width: 1536px) {
-  .blog-bar-container {
-    max-width: 1500px;
-  }
-  .vertical-soli-box {
-    width: 30%;
-  }
-}
 /**/
 .use-case-page-title {
   background-color: #f5b99f;
@@ -1039,5 +1054,221 @@ li {
     0px 2px 6px rgba(0, 0, 0, 0.12) !important;
 }
 /**/
+/* Her section tam ekranı kaplayacak */
+.section {
+  padding-bottom: 150px;
+}
 /**/
 /**/
+.flexnet-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+}
+
+/* Center FlexNet circle */
+.circle {
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2px solid #fff;
+}
+
+.flexnet {
+  background-color: #2a9fd6;
+  width: 100px;
+  height: 100px;
+  z-index: 6;
+}
+
+.center-label {
+  font-size: 14px;
+  color: #fff;
+}
+/**/
+.blog-button {
+  background-color: #3b82f6;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex !important;
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+
+  align-items: center;
+}
+.blog-button a {
+  color: white;
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+
+/* Ring styling */
+.ring-1,
+.ring-2,
+.ring-3,
+.ring-4,
+.ring-5 {
+  position: absolute;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring-1 {
+  background-color: #f2cfb1;
+  width: 200px;
+  height: 200px;
+  z-index: 5;
+}
+
+.ring-2 {
+  background-color: #b1d7f2;
+  width: 300px;
+  height: 300px;
+  z-index: 4;
+}
+
+.ring-3 {
+  background-color: #f2b1d1;
+  width: 400px;
+  height: 400px;
+  z-index: 3;
+}
+
+.ring-4 {
+  background-color: #d1b1f2;
+  width: 500px;
+  height: 500px;
+  z-index: 2;
+}
+
+.ring-5 {
+  background-color: #b1f2b7;
+  width: 600px;
+  height: 600px;
+  z-index: 1;
+}
+
+/* Text positioning */
+.text-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.label {
+  font-size: 14px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* Text rotation for each ring */
+.rotate-1 {
+  position: absolute;
+  transform: rotate(-30deg) translateX(90px) rotate(30deg); /* Adjust angles */
+}
+
+.rotate-2 {
+  position: absolute;
+  transform: rotate(-60deg) translateX(140px) rotate(60deg); /* Adjust angles */
+}
+
+.rotate-3 {
+  position: absolute;
+  transform: rotate(-90deg) translateX(190px) rotate(90deg); /* Adjust angles */
+}
+
+.rotate-4 {
+  position: absolute;
+  transform: rotate(-120deg) translateX(240px) rotate(120deg); /* Adjust angles */
+}
+
+.rotate-5 {
+  position: absolute;
+  transform: rotate(-150deg) translateX(290px) rotate(150deg); /* Adjust angles */
+}
+
+/* Tooltip styling */
+
+.recharts-tooltip-wrapper div {
+  transform: rotate(90deg) !important;
+  background-color: #00796b;
+  color: black !important;
+  width: max-content;
+  height: max-content;
+}
+.connectivity-chart {
+  overflow: visible !important;
+}
+.connectivity-chart text {
+  overflow: visible !important;
+}
+.connectivity-right p {
+  margin-bottom: 5px;
+}
+.connecticity-solutions-p {
+  font-size: 19px !important;
+}
+.usecases-home-parent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.usecases-home-box {
+  width: 48%;
+  padding: 20px;
+  text-align: center;
+  border-radius: 7px;
+}
+.usecases-home-icon {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #fccc55;
+}
+.usecases-home-bottom h2 {
+  font-size: 25px;
+  font-weight: 500;
+}
+.usecases-home-bottom h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}

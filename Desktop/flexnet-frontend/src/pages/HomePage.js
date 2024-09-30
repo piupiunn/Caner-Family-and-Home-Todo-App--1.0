@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Element, scroller } from "react-scroll";
 import MainPageHero from "../components/MainPageHero";
 import VerticalSolutionsCarousel from "../components/VerticalSolutionsCarousel";
 import Connectivity from "../components/Connectivity";
@@ -7,132 +8,120 @@ import Partners from "../components/Partners";
 import Faq from "../components/Faq";
 import HomeBlog from "../components/HomeBlog";
 import Contact from "../components/Contact";
+import VerticalSolutionsHome from "../components/VerticalSolutionsHome";
+import UseCasesHome from "../components/UseCasesHome";
 
 export default function HomePage() {
-  const sections = useRef([]);
-  const isScrolling = useRef(false); // Use useRef to persist value across renders
+  const [activeSection, setActiveSection] = useState(0); // Aktif section'ın indexi
+  const sectionNames = [
+    "section1",
+    "section2",
+    "section3",
+    "section4",
+    "section5",
+    "section6",
+    "section7",
+    "section8",
+  ]; // Section'ların isimlerini listeledik
 
+  // Section'a scroll yapma fonksiyonu
+  const scrollToSection = (sectionIndex) => {
+    if (sectionIndex >= 0 && sectionIndex < sectionNames.length) {
+      scroller.scrollTo(sectionNames[sectionIndex], {
+        duration: 800,
+        delay: 0,
+        smooth: "easeInOutQuart",
+      });
+      setActiveSection(sectionIndex); // Aktif section'ı güncelle
+    }
+  };
+
+  // Mouse wheel event listener ile scroll yapma
+  const handleScroll = (event) => {
+    if (event.deltaY > 0) {
+      // Aşağı scroll yapılıyorsa
+      scrollToSection(activeSection + 1); // Bir sonraki section'a geç
+    } else {
+      // Yukarı scroll yapılıyorsa
+      scrollToSection(activeSection - 1); // Bir önceki section'a dön
+    }
+  };
+
+  // componentDidMount ve componentWillUnmount alternatifi
   useEffect(() => {
-    const smoothScrollTo = (targetPosition) => {
-      if (isScrolling.current) return; // Prevent overlapping scrolls
-      isScrolling.current = true; // Lock scrolling
+    window.addEventListener("wheel", handleScroll);
 
-      const startPosition = window.scrollY;
-      const distance = targetPosition - startPosition;
-      let startTime = null;
-
-      const animation = (currentTime) => {
-        if (startTime === null) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-
-        // Ease-in-out function for smooth transition
-        const run = easeInOutQuad(timeElapsed, startPosition, distance, 300); // 300ms duration
-        window.scrollTo(0, run);
-
-        if (timeElapsed < 300) {
-          requestAnimationFrame(animation); // Continue animation
-        } else {
-          isScrolling.current = false; // Unlock scrolling
-          window.scrollTo(0, targetPosition); // Ensure precise position
-        }
-      };
-
-      requestAnimationFrame(animation);
-    };
-
-    // Easing function remains the same
-    const easeInOutQuad = (t, b, c, d) => {
-      t /= d / 2;
-      if (t < 1) return (c / 2) * t * t + b;
-      t--;
-      return (-c / 2) * (t * (t - 2) - 1) + b;
-    };
-
-    console.log(
-      sections.current.map((section, index) => ({
-        index,
-        offsetTop: section.offsetTop,
-        offsetHeight: section.offsetHeight,
-      }))
-    );
-
-    const handleScroll = (event) => {
-      event.preventDefault(); // Prevent default scrolling behavior
-
-      if (isScrolling.current) return; // Exit if animation is in progress
-
-      const delta = event.deltaY;
-
-      const currentSectionIndex = sections.current.findIndex(
-        (section) =>
-          window.scrollY < section.offsetTop + section.offsetHeight - 1
-      );
-
-      console.log("Current Section Index:", currentSectionIndex);
-
-      if (delta > 0 && currentSectionIndex < sections.current.length - 1) {
-        const nextSection = sections.current[currentSectionIndex + 1];
-        smoothScrollTo(nextSection.offsetTop);
-      } else if (delta < 0 && currentSectionIndex > 0) {
-        const prevSection = sections.current[currentSectionIndex - 1];
-        smoothScrollTo(prevSection.offsetTop);
-      }
-    };
-
-    // Add the event listener with passive: false
-    window.addEventListener("wheel", handleScroll, { passive: false });
-
+    // Cleanup function to remove the event listener
     return () => {
       window.removeEventListener("wheel", handleScroll);
     };
-  }, []);
+  }, [activeSection]); // Aktif section değiştiğinde event listener tekrar eklenecek
 
   return (
     <div>
-      {/* Main Page Hero Section */}
-      <div ref={(el) => (sections.current[0] = el)}>
+      {/* Section 1 */}
+      <Element name="section1">
         <MainPageHero />
-      </div>
+      </Element>
 
-      {/* Vertical Solutions Section */}
-      <div ref={(el) => (sections.current[1] = el)}>
+      {/* Section 2 */}
+      <Element className="section" name="section2">
         <h1 className="section-titles">Vertical Solutions</h1>
-        <VerticalSolutionsCarousel />
-      </div>
+        <p>
+          Discover how FlexNet delivers complete solutions for industries like
+          Construction, Logistics, Media, Maritime, and more. From 4G/5G
+          connectivity to applications and devices, we help solve real-world
+          problems.
+        </p>
+        <VerticalSolutionsHome />
+      </Element>
 
-      {/* Connectivity Section */}
-      <div ref={(el) => (sections.current[2] = el)}>
+      {/* Section 3 */}
+      <Element className="section" name="section3">
         <Connectivity />
-      </div>
+      </Element>
 
-      {/* Use Cases Section */}
-      <div ref={(el) => (sections.current[3] = el)}>
-        <UseCases />
-      </div>
+      {/* Section 4 */}
+      <Element className="section" name="section4">
+        <h1 className="section-titles">Use Cases</h1>
+        <h3 className=" mb-10">Outlook on the Industries</h3>
+        <UseCasesHome />
+      </Element>
 
-      {/* Our Partners Section */}
-      <div ref={(el) => (sections.current[4] = el)}>
-        <h1 className="section-titles">Our Partners</h1>
+      {/* Section 5 */}
+      <Element className="section" name="section5">
+        <h1 className="section-titles">Our Trusted Partners</h1>
+        <h3 className=" mb-10">
+          FlexNet collaborates with leading partners to bring you the best
+          devices, applications, and services.
+        </h3>
         <Partners />
-      </div>
+      </Element>
 
-      {/* Blog Section */}
-      <div ref={(el) => (sections.current[5] = el)}>
-        <h1 className="section-titles">Blog</h1>
+      {/* Section 6 */}
+      <Element className="section" name="section6">
+        <h1 className="section-titles">Stay Updated with FlexNet Insights</h1>
+        <h3>
+          Read the latest trends, industry insights, and updates from FlexNet.
+        </h3>
         <HomeBlog />
-      </div>
+      </Element>
 
-      {/* FAQ Section */}
-      <div ref={(el) => (sections.current[6] = el)}>
-        <h1 className="section-titles">FAQ</h1>
+      {/* Section 7 */}
+      <Element className="section" name="section7">
+        <h1 className="section-titles">Frequently Asked Questions</h1>
+        <h3>
+          Got questions? We’ve got answers. Find out more about FlexNet’s
+          solutions, deployments, and services.
+        </h3>
         <Faq />
-      </div>
+      </Element>
 
-      {/* Contact Us Section */}
-      <div ref={(el) => (sections.current[7] = el)}>
+      {/* Section 8 */}
+      <Element className="section" name="section8">
         <h1 className="section-titles">Contact Us</h1>
         <Contact />
-      </div>
+      </Element>
     </div>
   );
 }

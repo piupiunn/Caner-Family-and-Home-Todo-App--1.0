@@ -34,7 +34,7 @@ export default function Navbar() {
   }, [megamenuRef]);
 
   return (
-    <div className="wrapper">
+    <div className="wrapper-navbar">
       <div className="navbar-container">
         <div className="logo-container">
           <img id="logo-img" src="" alt="logo" />

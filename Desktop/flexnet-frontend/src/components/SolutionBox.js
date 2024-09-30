@@ -23,7 +23,7 @@ export default function SolutionBox({
       <button
         className={`border vertical-box-button ${bgColor} rounded-lg  text-center`}
       >
-        <Link to="/single-vertical">Details</Link>
+        <Link to="/single-vertical">Learn More</Link>
       </button>
     </div>
   );

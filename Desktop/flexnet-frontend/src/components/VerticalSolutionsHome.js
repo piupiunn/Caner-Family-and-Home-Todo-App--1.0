@@ -17,41 +17,9 @@ import { TbParkingCircle } from "react-icons/tb";
 import { FaArrowUpFromWaterPump, FaOilWell } from "react-icons/fa6";
 import NewVerticalBox from "./NewVerticalBox";
 import { Link } from "react-router-dom";
-import { Carousel } from "primereact/carousel";
 
-export default function VerticalSolutionsCarousel() {
+export default function VerticalSolutionsHome() {
   const features = [
-    {
-      icon: <MdConstruction size={24} className="text-teal-500" />,
-      title: "Construction",
-      description: "Smart Helmets, safety apps, and more",
-      bgColor: "bg-teal-100",
-      borderColor: "border-teal-200",
-    },
-
-    {
-      icon: <BsCameraReelsFill size={24} className="text-gray-500" />,
-      title: " Media & Broadcast",
-      description: "5G-enabled live streaming and remote production",
-      bgColor: "bg-gray-100",
-      borderColor: "border-gray-200",
-    },
-
-    {
-      icon: <GiForklift size={35} className="text-blue-500" />,
-      title: "Flexnet Logistics",
-      description: "Real-time tracking and asset management solutions",
-      bgColor: "bg-blue-100",
-      borderColor: "border-blue-200",
-    },
-
-    {
-      icon: <GiMining size={24} className="text-purple-500" />,
-      title: " Mining",
-      description: "Rugged devices, safety applications, and worker tracking",
-      bgColor: "bg-purple-100",
-      borderColor: "border-purple-200",
-    },
     {
       icon: <CiWifiOn size={40} className="text-yellow-600" />,
       title: " Basic",
@@ -59,7 +27,34 @@ export default function VerticalSolutionsCarousel() {
       bgColor: "bg-yellow-400",
       borderColor: "border-yellow-400",
     },
-
+    {
+      icon: <MdConstruction size={24} className="text-teal-500" />,
+      title: "Construction",
+      description: "Smart Helmets, safety apps, and more",
+      bgColor: "bg-teal-100",
+      borderColor: "border-teal-200",
+    },
+    {
+      icon: <GiMining size={24} className="text-purple-500" />,
+      title: " Mining",
+      description: "Rugged devices, safety applications, and worker tracking.",
+      bgColor: "bg-purple-100",
+      borderColor: "border-purple-200",
+    },
+    {
+      icon: <BsCameraReelsFill size={24} className="text-gray-500" />,
+      title: "Flexnet Media & Brodcast",
+      description: "5G-enabled live streaming and remote production.",
+      bgColor: "bg-gray-100",
+      borderColor: "border-gray-200",
+    },
+    {
+      icon: <GiForklift size={35} className="text-blue-500" />,
+      title: "Flexnet Logistics",
+      description: "Real-time tracking and asset management solutionst",
+      bgColor: "bg-blue-100",
+      borderColor: "border-blue-200",
+    },
     {
       icon: <MdCrisisAlert size={24} className="text-pink-500" />,
       title: "Flexnet Crisis",
@@ -70,44 +65,20 @@ export default function VerticalSolutionsCarousel() {
     },
   ];
 
-  const responsiveOptions = [
-    {
-      breakpoint: "1024px",
-      numVisible: 2,
-      numScroll: 1,
-    },
-    {
-      breakpoint: "600px",
-      numVisible: 1,
-      numScroll: 1,
-    },
-  ];
-
-  const solutionTemplate = (feature) => {
-    return (
-      <SolutionBox
-        icon={feature.icon}
-        title={feature.title}
-        description={feature.description}
-        bgColor={feature.bgColor}
-        borderColor={feature.borderColor}
-      />
-    );
-  };
-
   return (
-    <div className="container vertical-slayt mx-auto px-6 py-10">
-      <Carousel
-        value={features}
-        itemTemplate={solutionTemplate}
-        numVisible={3}
-        numScroll={1}
-        responsiveOptions={responsiveOptions}
-        circular
-        autoplayInterval={3000}
-        className="vertical-solutions-carousel"
-      />
-
+    <div>
+      <div className="container mx-auto px-3 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {features.map((feature, index) => (
+          <SolutionBox
+            key={index}
+            icon={feature.icon}
+            title={feature.title}
+            description={feature.description}
+            bgColor={feature.bgColor}
+            borderColor={feature.borderColor}
+          />
+        ))}
+      </div>
       <button className="solution-button shadow-lg">
         <Link to="/vertical-solutions">See Solutions Details</Link>
       </button>
