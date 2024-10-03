@@ -69,8 +69,7 @@ const CircularText = () => (
     viewBox="0 0 600 600"
     style={{
       position: "absolute",
-      top: "50px",
-      left: "50px",
+
       pointerEvents: "none",
     }}
   >
