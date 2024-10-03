@@ -198,7 +198,7 @@ export default function VerticalSolutionsPage() {
       <h1 className="section-titles vertical-solutions-page-title">
         One Product, Many Solutions
       </h1>
-      <div className="container mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="container mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {features.map((feature, index) => (
           <VerticalSolutionsPageBox
             key={index}

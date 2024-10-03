@@ -121,12 +121,12 @@ a {
 
 /* Keep your previous navbar container styling */
 .navbar-container {
-  margin-left: 5rem;
-  margin-right: 5rem;
-  padding-left: 5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 1rem;
   padding-right: 5rem;
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+
   align-items: center;
   background-color: white;
   display: flex;
@@ -184,11 +184,12 @@ a {
       rgba(255, 255, 255, 0.2)
     ),
     radial-gradient(77.36% 256.97% at 77.36% 57.52%, #eeefaf 0%, #c3e3fa 100%);
-  clip-path: ellipse(150% 87% at 93% 13%);
+
   padding-left: 5rem !important;
   padding-right: 5rem !important;
   overflow: hidden;
   padding-top: 1.5rem !important;
+  margin-top: 3rem;
 }
 .main-page-hero-top {
   margin-left: 5rem !important;
@@ -1272,3 +1273,136 @@ li {
   font-size: 20px;
   margin-bottom: 20px;
 }
+.mobile-navbar {
+  display: none;
+}
+/*MOBILE*/
+@media (max-width: 475px) {
+  .main-page-hero {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-top: 0px !important;
+  }
+  .main-page-hero-top {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    margin-top: 1rem !important;
+  }
+  .contact-button a {
+    font-size: 0.9rem !important;
+  }
+  .vertical-soli-box {
+    width: 100% !important;
+  }
+  .flex.connectivity-parent {
+    flex-direction: column-reverse;
+    padding: 1rem !important;
+  }
+  .connectivity-parent .connectivity-right {
+    margin-top: 1rem !important;
+  }
+  .connectivity-parent .connectivity-right h3 {
+    font-size: 1.75rem !important;
+  }
+  .connectivity-parent .connectivity-right p {
+    font-size: 1.25rem !important;
+  }
+  .recharts-wrapper {
+    scale: 0.8;
+  }
+  .connectivity-chart {
+    scale: 0.8;
+    margin: auto;
+    left: 31px !important;
+    top: 31px !important;
+  }
+  .section .usecases-home-parent {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .section .usecases-home-box {
+    width: 100% !important;
+  }
+  .blog-box-parent {
+    width: 100%;
+  }
+  .section .home-blog {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .section .faq-parent {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .faq-container {
+    width: 100%;
+  }
+  .contact-left {
+    width: 100%;
+  }
+  .contact-right {
+    width: 100%;
+  }
+  .contact-left-box {
+    padding-right: 0px !important;
+  }
+  .footer-parent {
+    line-height: 2.25rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    background-color: #212121;
+    font-size: 16px;
+    color: #f1fff1 !important;
+  }
+  .footer-container {
+    width: 50%;
+  }
+  .footer-container li {
+    text-align: center;
+  }
+  .footer-address {
+    font-size: 14px !important;
+  }
+  .section {
+    padding-bottom: 50px;
+  }
+  .navbar-container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    align-items: center;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobile-navbar {
+    display: inline-block !important;
+  }
+  .navbar-list {
+    display: none !important;
+  }
+  #popup_menu_right {
+    padding: 1rem;
+  }
+  #popup_menu_right li {
+    margin-bottom: 5px;
+  }
+  .container.connectivity-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
