@@ -7,9 +7,13 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
+
 a {
   text-decoration: none;
   color: black;
+}
+body {
+  overflow: hidden;
 }
 .fp-warning,
 .fp-watermark {
@@ -137,7 +141,7 @@ a {
 }
 
 .navbar-list {
-  display: flex;
+  display: flex !important;
   width: 100%;
 }
 
@@ -1276,12 +1280,18 @@ li {
 .mobile-navbar {
   display: none;
 }
+.connectivity-chart {
+  top: 50px;
+  left: 50px;
+}
 /*MOBILE*/
 @media (max-width: 475px) {
   .main-page-hero {
     padding-left: 0px !important;
     padding-right: 0px !important;
     padding-top: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 30px;
   }
   .main-page-hero-top {
     margin-left: 1rem !important;
@@ -1313,12 +1323,13 @@ li {
   .connectivity-chart {
     scale: 0.8;
     margin: auto;
-    left: 31px !important;
-    top: 31px !important;
+    left: 31px;
+    top: 31px;
   }
   .section .usecases-home-parent {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+    padding-top: 0rem !important;
   }
   .section .usecases-home-box {
     width: 100% !important;
@@ -1367,7 +1378,7 @@ li {
     font-size: 14px !important;
   }
   .section {
-    padding-bottom: 50px;
+    padding-bottom: 10px;
   }
   .navbar-container {
     margin-left: 1rem;
@@ -1396,6 +1407,12 @@ li {
   .container.connectivity-container {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+  }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
 }
 /**/
