@@ -12,7 +12,7 @@ export default function FeatureBox({
   description,
 }) {
   return (
-    <div className="flex flex-col lg:flex-row items-center bg-white p-8 rounded-lg shadow-lg">
+    <div className="flex connectivity-parent flex-col lg:flex-row items-center bg-white p-8 rounded-lg shadow-lg">
       {/* Sol Bölüm - Renkli Arka Plan ve Görsel */}
       <div className={`lg:w-1/2 flex justify-center p-6 rounded-lg ${""}`}>
         <ConnectivityChart />
@@ -52,7 +52,7 @@ export default function FeatureBox({
         </p>
 
         <button className="connectivity-button">
-          <Link to="/connectivity">Go to Connectivity Page</Link>{" "}
+          <Link to="/connectivity">Go to Connectivity Page</Link>
           <FaExternalLinkAlt className="ml-2" />
         </button>
       </div>

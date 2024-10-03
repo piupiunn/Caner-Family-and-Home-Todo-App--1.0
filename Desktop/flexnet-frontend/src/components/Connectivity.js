@@ -6,7 +6,7 @@ import ConnectivityChart from "./ConnectivityChart";
 
 export default function Connectivity() {
   return (
-    <div className="container mx-auto px-6 py-10 ">
+    <div className="container connectivity-container mx-auto px-6 py-10 ">
       <FeatureBox
         imageSrc="https://sakai.primereact.org/demo/images/landing/mockup.svg" // Sol tarafta gösterilecek görsel
         imageBgColor="bg-purple-200" // Sol tarafın arka plan rengi

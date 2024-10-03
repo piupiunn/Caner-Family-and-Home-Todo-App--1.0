@@ -1,12 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { Button } from "primereact/button";
+import { Menu } from "primereact/menu";
+import { Toast } from "primereact/toast";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   // State to toggle the megamenu for "Vertical Solutions"
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const megamenuRef = useRef(null);
   const megamenuRef2 = useRef(null);
+
+  const navigate = useNavigate(); // useNavigate hook
 
   const toggleMegaMenu = () => {
     setIsMegaMenuOpen(!isMegaMenuOpen);
@@ -32,6 +38,105 @@ export default function Navbar() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [megamenuRef]);
+
+  const menuRight = useRef(null);
+  const toast = useRef(null);
+  const items = [
+    {
+      items: [
+        {
+          label: "Home",
+          command: () => navigate("/"), // Yönlendirme için command kullanıyoruz
+        },
+      ],
+    },
+    {
+      label: "Vertical Solutions",
+      items: [
+        {
+          label: "Item 1",
+          command: () => navigate("/vertical-solutions/item1"),
+        },
+        {
+          label: "Item 2",
+          command: () => navigate("/vertical-solutions/item2"),
+        },
+
+        {
+          label: "Item 3",
+          command: () => navigate("/vertical-solutions/item3"),
+        },
+
+        {
+          label: "Item 4",
+          command: () => navigate("/vertical-solutions/item4"),
+        },
+
+        {
+          label: "Item 5",
+          command: () => navigate("/vertical-solutions/item5"),
+        },
+
+        {
+          label: "Item 6",
+          command: () => navigate("/vertical-solutions/item6"),
+        },
+
+        {
+          label: "General Info Page",
+          command: () => navigate("/vertical-solutions"),
+        },
+      ],
+    },
+    {
+      items: [
+        {
+          label: "Connectivity",
+          command: () => navigate("/connectivity"),
+        },
+      ],
+    },
+    {
+      items: [
+        {
+          label: "Use Cases",
+          command: () => navigate("/use-cases"),
+        },
+      ],
+    },
+    {
+      items: [
+        {
+          label: "Partners",
+          command: () => navigate("/partners"),
+        },
+      ],
+    },
+    {
+      items: [
+        {
+          label: "Blog",
+          command: () => navigate("/blog-page"),
+        },
+      ],
+    },
+    {
+      items: [
+        {
+          label: "FAQ",
+          command: () => navigate("/faq"),
+        },
+      ],
+    },
+    {
+      items: [
+        {
+          label: "Contact Us",
+          command: () => navigate("/contact-us"),
+        },
+      ],
+    },
+  ];
 
   return (
     <div className="wrapper-navbar">
@@ -225,6 +330,26 @@ export default function Navbar() {
               </button>
             </li>
           </ul>
+        </div>
+
+        <div className="mobile-navbar">
+          <Toast ref={toast}></Toast>
+
+          <Menu
+            model={items}
+            popup
+            ref={menuRight}
+            id="popup_menu_right"
+            popupAlignment="right"
+          />
+          <Button
+            label="Menu"
+            icon="pi pi-align-right"
+            className="mr-2"
+            onClick={(event) => menuRight.current.toggle(event)}
+            aria-controls="popup_menu_right"
+            aria-haspopup
+          />
         </div>
       </div>
     </div>
