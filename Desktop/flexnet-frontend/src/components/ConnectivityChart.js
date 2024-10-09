@@ -194,6 +194,7 @@ const ConnectivityChart = () => {
               className="base-pie"
               key={`cell-${index}`}
               fill={ringColors[0]}
+              stroke="none"
             />
           ))}
         </Pie>
