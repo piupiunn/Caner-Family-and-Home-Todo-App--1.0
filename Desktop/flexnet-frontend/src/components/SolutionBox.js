@@ -10,7 +10,7 @@ export default function SolutionBox({
 }) {
   return (
     <div
-      className={`border vertical-soli-box  ${borderColor} rounded-lg p-6 text-center`}
+      className={`border vertical-soli-box  ${borderColor} rounded-lg p-3 text-center`}
       style={{ borderWidth: "2px" }}
     >
       <div

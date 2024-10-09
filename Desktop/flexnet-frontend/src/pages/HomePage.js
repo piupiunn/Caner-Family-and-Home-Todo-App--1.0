@@ -66,7 +66,7 @@ export default function HomePage() {
 
       {/* Section 2 */}
       <Element className="section" name="section2">
-        <h1 className="section-titles">Vertical Solutions</h1>
+        <h1 className="section-titles mt-10">Vertical Solutions</h1>
         <p>
           Discover how FlexNet delivers complete solutions for industries like
           Construction, Logistics, Media, Maritime, and more. From 4G/5G

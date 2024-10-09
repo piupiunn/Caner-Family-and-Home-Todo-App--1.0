@@ -142,14 +142,17 @@ export default function Navbar() {
     <div className="wrapper-navbar">
       <div className="navbar-container">
         <div className="logo-container">
-          <img id="logo-img" src="" alt="logo" />
+          <Link to="/">
+            <img
+              id="logo-img"
+              src="https://opticoms.de/wp-content/uploads/2020/12/opticoms_logo_tagline-768x109.png"
+              alt="logo"
+            />
+          </Link>
         </div>
         <div className="navbar-list">
           <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li className="nav-item-with-dropdown" ref={megamenuRef}>
+            <li className="nav-item-with-dropdown navbar-li" ref={megamenuRef}>
               <button onClick={toggleMegaMenu} className="nav-link">
                 Vertical Solutions
               </button>
@@ -309,23 +312,33 @@ export default function Navbar() {
                 </div>
               )}
             </li>
-            <li>
-              <Link to="/connectivity">Connectivity</Link>
+            <li className="navbar-li">
+              <button>
+                <Link to="/connectivity">Connectivity</Link>
+              </button>
             </li>
-            <li>
-              <Link to="/use-cases">Use Cases</Link>
+            <li className="navbar-li">
+              <button>
+                <Link to="/use-cases">Use Cases</Link>
+              </button>
             </li>
-            <li>
-              <Link to="/partners">Partners</Link>
+            <li className="navbar-li">
+              <button>
+                <Link to="/partners">Partners</Link>
+              </button>
             </li>
-            <li>
-              <Link to="/blog-page">Blog</Link>
+            <li className="navbar-li">
+              <button>
+                <Link to="/blog-page">Blog</Link>
+              </button>
             </li>
-            <li>
-              <Link to="/faq">FAQ</Link>
+            <li className="navbar-li">
+              <button>
+                <Link to="/faq">FAQ</Link>
+              </button>
             </li>
-            <li>
-              <button className="contact-button">
+            <li className="navbar-li">
+              <button>
                 <Link to="/contact-us">Contact</Link>
               </button>
             </li>
