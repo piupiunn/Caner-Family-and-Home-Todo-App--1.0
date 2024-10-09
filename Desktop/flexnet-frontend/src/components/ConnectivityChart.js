@@ -190,7 +190,11 @@ const ConnectivityChart = () => {
           labelLine={false}
         >
           {level1Data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={ringColors[0]} />
+            <Cell
+              className="base-pie"
+              key={`cell-${index}`}
+              fill={ringColors[0]}
+            />
           ))}
         </Pie>
 

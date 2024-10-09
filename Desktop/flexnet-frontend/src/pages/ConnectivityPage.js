@@ -410,9 +410,9 @@ function App() {
   const getImageForSelection = () => {
     // Choose an image based on the selection, for example:
     if (technology === "5G" && environment === "Indoor") {
-      return "https://source.unsplash.com/600x400/?5g,indoor";
+      return "https://www.pngplay.com/wp-content/uploads/6/Computer-Accessories-Background-PNG-Image.png";
     } else if (technology === "4G" && environment === "Outdoor") {
-      return "https://source.unsplash.com/600x400/?4g,outdoor";
+      return "https://static.vecteezy.com/system/resources/previews/024/046/205/non_2x/black-mouse-computer-accessories-on-transparent-background-free-png.png";
     } else if (deploymentModel === "Cloud") {
       return "https://source.unsplash.com/600x400/?cloud,technology";
     }
@@ -460,7 +460,11 @@ function App() {
                   I agree to be contacted for communication purposes.
                 </label>
               </div>
-              <Button type="submit" label="Submit" />
+              <Button
+                className=" connectivity-main-buttons"
+                type="submit"
+                label="Submit"
+              />
             </form>
           </div>
         </div>
@@ -483,6 +487,7 @@ function App() {
                 <td>Technology</td>
                 <td>
                   <SelectButton
+                    className="connectivity-main-buttons"
                     value={technology}
                     options={technologyOptions}
                     onChange={(e) => setTechnology(e.value)}
@@ -493,6 +498,7 @@ function App() {
                 <td>Environment</td>
                 <td>
                   <SelectButton
+                    connectivity-main-buttons
                     value={environment}
                     options={environmentOptions}
                     onChange={(e) => setEnvironment(e.value)}
@@ -503,6 +509,7 @@ function App() {
                 <td>Deployment Model</td>
                 <td>
                   <SelectButton
+                    connectivity-main-buttons
                     value={deploymentModel}
                     options={deploymentOptions}
                     onChange={(e) => setDeploymentModel(e.value)}
@@ -512,7 +519,11 @@ function App() {
             </tbody>
           </table>
 
-          <Button onClick={handleFormSubmit2} label="Show Pricing" />
+          <Button
+            className="show-pricing"
+            onClick={handleFormSubmit2}
+            label="Show Pricing"
+          />
 
           {/* Part 2: Display results based on selections */}
           {showPricing && (
@@ -554,7 +565,7 @@ function App() {
               <h2>3. Additional Information</h2>
               <form onSubmit={handleOptionalInfoSubmit}>
                 {/* Country Dropdown */}
-                <div>
+                <div className="country-select">
                   <label htmlFor="country">Country (Mandatory):</label>
                   <select
                     id="country"
@@ -567,7 +578,7 @@ function App() {
                     }
                     required
                   >
-                    <option value="">Select your country</option>
+                    <option value=""></option>
                     {countryList.map((country, index) => (
                       <option key={index} value={country}>
                         {country}
@@ -647,11 +658,12 @@ function App() {
                     }
                   />
                 </div>
-                <div>
+                <div className="last-choice">
                   <label htmlFor="supportUpgrade">
                     Support Upgrade Options:
                   </label>
                   <SelectButton
+                    className="connectivity-last-choice-buttons"
                     value={optionalInfo.supportUpgrade}
                     options={["Basic", "Premium"]}
                     onChange={(e) =>
@@ -662,9 +674,10 @@ function App() {
                     }
                   />
                 </div>
-                <div>
+                <div className="last-choice">
                   <label htmlFor="edgeComputing">Edge Computing:</label>
                   <SelectButton
+                    className="connectivity-last-choice-buttons"
                     value={optionalInfo.edgeComputing}
                     options={["Yes", "No"]}
                     onChange={(e) =>
@@ -675,7 +688,7 @@ function App() {
                     }
                   />
                 </div>
-                <div>
+                <div className="floor-plan">
                   <label htmlFor="floorPlan">
                     Upload Floor Plan / Photo of Location:
                   </label>
@@ -690,7 +703,11 @@ function App() {
                     }
                   />
                 </div>
-                <Button type="submit" label="Submit Additional Info" />
+                <Button
+                  className="bottom-submit-connect"
+                  type="submit"
+                  label="Submit Additional Info"
+                />
               </form>
 
               {/* Display a thank you message after submitting */}
