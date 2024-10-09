@@ -159,16 +159,6 @@ export default function Navbar() {
               {/* Conditional rendering of megamenu */}
               {isMegaMenuOpen && (
                 <div className="megamenu">
-                  <button
-                    onClick={closeMegaMenu}
-                    ref={megamenuRef2}
-                    className="mega-menu-general-link"
-                  >
-                    <Link to="/vertical-solutions">
-                      Go to General Info Page
-                    </Link>
-                    <FaExternalLinkAlt size={10} className="ml-2" />
-                  </button>
                   <div className="megamenu-content">
                     {/* Three lists side by side */}
                     <div className="megamenu-lists">
@@ -309,6 +299,17 @@ export default function Navbar() {
                       </div>
                     </div>
                   </div>
+
+                  <button
+                    onClick={closeMegaMenu}
+                    ref={megamenuRef2}
+                    className="mega-menu-general-link"
+                  >
+                    <Link to="/vertical-solutions">
+                      Go to General Info Page
+                    </Link>
+                    <FaExternalLinkAlt size={10} className="ml-2" />
+                  </button>
                 </div>
               )}
             </li>

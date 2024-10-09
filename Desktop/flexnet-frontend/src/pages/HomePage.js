@@ -12,7 +12,7 @@ import VerticalSolutionsHome from "../components/VerticalSolutionsHome";
 import UseCasesHome from "../components/UseCasesHome";
 
 export default function HomePage() {
-  const [activeSection, setActiveSection] = useState(0); // Aktif section'ın indexi
+  const [activeSection, setActiveSection] = useState(0); // Active section index
   const sectionNames = [
     "section1",
     "section2",
@@ -22,9 +22,9 @@ export default function HomePage() {
     "section6",
     "section7",
     "section8",
-  ]; // Section'ların isimlerini listeledik
+  ]; // List of section names
 
-  // Section'a scroll yapma fonksiyonu
+  // Function to scroll to a section
   const scrollToSection = (sectionIndex) => {
     if (sectionIndex >= 0 && sectionIndex < sectionNames.length) {
       scroller.scrollTo(sectionNames[sectionIndex], {
@@ -32,30 +32,41 @@ export default function HomePage() {
         delay: 0,
         smooth: "easeInOutQuart",
       });
-      setActiveSection(sectionIndex); // Aktif section'ı güncelle
+      setActiveSection(sectionIndex); // Update active section
     }
   };
 
-  // Mouse wheel event listener ile scroll yapma
+  // Handle scroll event
   const handleScroll = (event) => {
     if (event.deltaY > 0) {
-      // Aşağı scroll yapılıyorsa
-      scrollToSection(activeSection + 1); // Bir sonraki section'a geç
+      // Scrolling down
+      scrollToSection(activeSection + 1); // Go to next section
     } else {
-      // Yukarı scroll yapılıyorsa
-      scrollToSection(activeSection - 1); // Bir önceki section'a dön
+      // Scrolling up
+      scrollToSection(activeSection - 1); // Go to previous section
     }
   };
 
-  // componentDidMount ve componentWillUnmount alternatifi
-  useEffect(() => {
-    window.addEventListener("wheel", handleScroll);
+  // Handle keydown event
+  const handleKeyDown = (event) => {
+    if (event.key === "ArrowDown") {
+      scrollToSection(activeSection + 1); // Go to next section
+    } else if (event.key === "ArrowUp") {
+      scrollToSection(activeSection - 1); // Go to previous section
+    }
+  };
 
-    // Cleanup function to remove the event listener
+  // Set up event listeners
+  useEffect(() => {
+    window.addEventListener("wheel", handleScroll); // Listen for mouse wheel scroll
+    window.addEventListener("keydown", handleKeyDown); // Listen for keyboard arrow keys
+
+    // Cleanup function to remove the event listeners
     return () => {
       window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [activeSection]); // Aktif section değiştiğinde event listener tekrar eklenecek
+  }, [activeSection]); // Re-add event listeners when activeSection changes
 
   return (
     <div>
@@ -78,6 +89,10 @@ export default function HomePage() {
 
       {/* Section 3 */}
       <Element className="section" name="section3">
+        <h1 className="section-titles mt-10">Connectivity</h1>
+        <h3 className=" mb-10">
+          Our connectivity solution with three different model
+        </h3>
         <Connectivity />
       </Element>
 

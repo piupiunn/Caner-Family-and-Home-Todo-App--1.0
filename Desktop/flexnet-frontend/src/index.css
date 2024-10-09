@@ -148,11 +148,11 @@ body {
   display: flex !important;
   width: 100%;
 }
-.navbar-list li {
+.navbar-list li button {
   position: relative;
   transition: 2s ease-in;
 }
-.navbar-list li::after {
+.navbar-list li button::after {
   position: absolute;
   content: "";
   width: 1px;
@@ -162,7 +162,7 @@ body {
   top: 8px;
 }
 
-.navbar-list li :hover::before {
+.navbar-list li button :hover::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -171,6 +171,9 @@ body {
   right: 0px;
   left: 0px;
   bottom: 0px;
+}
+.mega-menu-general-link {
+  position: absolute !important;
 }
 
 .navbar-list ul {
