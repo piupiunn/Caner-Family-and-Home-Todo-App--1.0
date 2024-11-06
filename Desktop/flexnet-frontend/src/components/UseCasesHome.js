@@ -32,9 +32,9 @@ export default function UseCasesHome() {
       subtitle: "Seamlessly Moving People & Things",
       description:
         "Reliable coverage & seamless handover enabling maximum mobility of workers, AGVs and drones regardless of the zone.",
-      iconColor: "#fccc55", // Tomato color for the icon
+      iconColor: "#1c80cf", // Tomato color for the icon
       titleColor: "#757575", // White color for the title
-      subtitleColor: "#ebbb41", // Tomato color for the subtitle
+      subtitleColor: "#1c80cf", // Tomato color for the subtitle
     },
     {
       icon: GiMining,
@@ -42,9 +42,9 @@ export default function UseCasesHome() {
       subtitle: "Looking via Camera Seeing via AI",
       description:
         "Enabling any connected camera to connect to AI for use in health and safety, hazard detection, and quality assurance.",
-      iconColor: "#cce8ff", // Dark Turquoise color for the icon
+      iconColor: "#1c80cf", // Dark Turquoise color for the icon
       titleColor: "#757575", // White color for the title
-      subtitleColor: "#a1b7c9", // Dark Turquoise color for the subtitle
+      subtitleColor: "#1c80cf", // Dark Turquoise color for the subtitle
     },
     {
       icon: GiForklift,
@@ -52,9 +52,9 @@ export default function UseCasesHome() {
       subtitle: "Sensors opening a new dimension",
       description:
         "Data and AI at the Edge, enabling real-time monitoring and autonomous decision-making as foundation of a Digital Twin.",
-      iconColor: "#e7cbec", // Orange color for the icon
+      iconColor: "#1c80cf", // Orange color for the icon
       titleColor: "#757575", // White color for the title
-      subtitleColor: "#e7cbec", // Orange color for the subtitle
+      subtitleColor: "#1c80cf", // Orange color for the subtitle
     },
     {
       icon: GiMining,
@@ -62,9 +62,9 @@ export default function UseCasesHome() {
       subtitle: "Cable-free connectivity for Fixed Assets",
       description:
         "Independence from cables. Connecting machines and robots via 5G allows flexible production floors and machines.",
-      iconColor: "#fac9da", // LimeGreen color for the icon
+      iconColor: "#1c80cf", // LimeGreen color for the icon
       titleColor: "#757575", // White color for the title
-      subtitleColor: "#ad8b97", // LimeGreen color for the subtitle
+      subtitleColor: "#1c80cf", // LimeGreen color for the subtitle
     },
   ];
 
