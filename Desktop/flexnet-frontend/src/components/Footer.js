@@ -9,7 +9,7 @@ export default function Footer() {
     <div className="footer-parent">
       <div className="footer-grid">
         <div className="footer-container">
-          <img src="" alt="logo" />
+          <img src="/PNG-01.png" alt="logo" />
         </div>
         <div className="footer-container">
           <ul>

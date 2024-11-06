@@ -143,11 +143,7 @@ export default function Navbar() {
       <div className="navbar-container">
         <div className="logo-container">
           <Link to="/">
-            <img
-              id="logo-img"
-              src="https://opticoms.de/wp-content/uploads/2020/12/opticoms_logo_tagline-768x109.png"
-              alt="logo"
-            />
+            <img id="logo-img" src="/PNG-01.png" alt="logo" />
           </Link>
         </div>
         <div className="navbar-list">

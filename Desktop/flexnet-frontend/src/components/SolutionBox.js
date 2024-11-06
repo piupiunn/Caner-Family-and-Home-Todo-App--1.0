@@ -23,7 +23,9 @@ export default function SolutionBox({
       <button
         className={`border vertical-box-button ${bgColor} rounded-lg  text-center`}
       >
-        <Link to="/single-vertical">Learn More</Link>
+        <Link className="group-hover:text-white" to="/single-vertical">
+          Learn More
+        </Link>
       </button>
     </div>
   );

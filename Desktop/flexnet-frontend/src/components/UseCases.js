@@ -17,7 +17,7 @@ export default function UseCases() {
       jobTitle: "Samlessly Moving People & Things",
       message:
         "Reliable coverage & seamless handover enabling maximum mobility of workers, AVGs and drones regardless of the zone",
-      companyLogo: <FaMountain size={48} className="text-gray-700" />,
+      companyLogo: <FaMountain size={48} className="text-blue-600" />,
       companyName: "",
     },
     {
@@ -25,7 +25,7 @@ export default function UseCases() {
       jobTitle: "Looking via Camera Seeing via AI",
       message:
         "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      companyLogo: <FaBuilding size={48} className="text-gray-700" />,
+      companyLogo: <FaBuilding size={48} className="text-blue-600" />,
       companyName: "",
     },
     {
