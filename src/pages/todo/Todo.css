@@ -1,0 +1,102 @@
+.todo-details {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  align-items: start;
+  grid-gap: 60px;
+  margin-bottom: 30px;
+}
+
+/* todo summary */
+.todo-summary {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 4px;
+}
+.todo-summary .page-title {
+  margin-top: 10px;
+}
+.todo-summary .date {
+  justify-content: flex-end;
+  font-size: 10px;
+  color: var(--title-color);
+}
+.todo-summary .details {
+  color: var(--text-color);
+  line-height: 1.8em;
+  font-size: 0.9em;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+.todo-summary h4 {
+  color: var(--text-color);
+  font-size: 10px;
+  margin-top: 10px;
+}
+
+.todo-summary p {
+  display: flex;
+  margin-top: 5px;
+  font-size: 12px;
+}
+.todo-summary .assigned-users .profilephoto {
+  margin-right: 10px;
+}
+.todo-summary + .btn {
+  margin-top: 20px;
+}
+.todo-summary .poster {
+  justify-content: end;
+  margin-top: 5px;
+}
+.profilephoto {
+  display: grid;
+}
+
+/* todo comments */
+.todo-comments {
+  max-width: 500px;
+}
+.todo-comments label {
+  margin-bottom: 0px;
+}
+.todo-comments textarea {
+  min-height: 40px;
+  font-size: 1em;
+}
+
+/* comment list */
+
+.todo-comments h4 {
+  color: var(--heading-color);
+}
+.todo-comments li {
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid #f2f2f2;
+  margin-top: 20px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
+  background: #fff;
+  box-sizing: border-box;
+  width: 450px;
+  overflow-wrap: anywhere;
+}
+.comment-author {
+  display: flex;
+  align-items: center;
+  color: var(--title-color);
+}
+.comment-author .profile-photo {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+.comment-date {
+  color: var(--text-color);
+  font-size: 0.9em;
+  margin: 4px 0 30px;
+}
+.comment-content {
+  color: var(--text-color);
+  font-size: 0.8em;
+  flex-direction: row;
+}
