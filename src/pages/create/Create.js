@@ -30,7 +30,7 @@ export default function Create() {
   const [users, setUsers] = useState([]);
   const { user } = useAuthContext();
 
-  // form field values
+  // form field valuess
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
   const [date, setDate] = useState("");
