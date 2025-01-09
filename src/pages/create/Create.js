@@ -30,7 +30,7 @@ export default function Create() {
   const [users, setUsers] = useState([]);
   const { user } = useAuthContext();
 
-  // form field valuess
+  // form field values
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
   const [date, setDate] = useState("");
@@ -40,7 +40,7 @@ export default function Create() {
   const [formError, setFormError] = useState(null);
   const [search, setSearch] = useState("");
 
-  // create user values for react-selectt
+  // create user values for react-select
   useEffect(() => {
     if (documents) {
       setUsers(
